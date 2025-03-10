@@ -1,6 +1,7 @@
 local player = game.Players.LocalPlayer
 local chara = player.Character or player.CharacterAdded:Wait()
 local humanoid = chara:WaitForChild("Humanoid")
+local RunService = game:GetService("RunService")
 
 	local screenGui = Instance.new("ScreenGui")
 	screenGui.Parent = player:WaitForChild("PlayerGui")
@@ -162,5 +163,54 @@ ResetJumpHeight.MouseButton1Click:Connect(function()
 	if humanoid then
 		humanoid.JumpHeight = 16
 		print("WalkSpeed Reset")
+	end
+end)
+
+	local NoClipButton = Instance.new("TextButton")
+	NoClipButton.Parent = MenuFrame
+	NoClipButton.Text = "No Clip On/Off" NoClipButton.TextScaled = true
+	NoClipButton.Size = UDim2.new(0,250,0,50)
+	NoClipButton.Position = UDim2.new(0.0,0,0.081,0)
+	NoClipButton.TextColor = BrickColor.new(Color3.fromRGB(255, 255, 255))
+	NoClipButton.BackgroundColor3 = Color3.fromRGB(0,0, 0)
+	NoClipButton.BackgroundTransparency = 0.3
+	NoClipButton.TextTransparency = 0.3
+
+local isnoclip = false
+
+player.CharacterAdded:Connect(function(character)
+	chara = character
+end)
+
+-- ボタンをクリックしたときの処理
+NoClipButton.MouseButton1Click:Connect(function()
+	if isnoclip == true then
+		isnoclip = false
+		NoClipButton.Text = "No clip {OFF}"
+		NoClipButton.BackgroundColor3 = Color3.fromRGB(170, 0, 0)
+	else
+		isnoclip = true
+		NoClipButton.Text = "No clip {ON}"
+		NoClipButton.BackgroundColor3 = Color3.fromRGB(85, 255, 0)
+	end
+end)
+
+-- NoClip状態を維持するために、毎フレームで処理を行う
+RunService.Stepped:Connect(function()
+	if chara then
+		if isnoclip == true then
+			for _, v in pairs(chara:GetDescendants()) do
+				if v:IsA("BasePart") then
+					v.CanCollide = false  -- 衝突判定を無効化
+				end
+			end
+		else
+			-- NoClipがオフのときは衝突を戻す
+			for _, v in pairs(chara:GetDescendants()) do
+				if v:IsA("BasePart") then
+					v.CanCollide = true  -- 衝突判定を戻す
+				end
+			end
+		end
 	end
 end)
