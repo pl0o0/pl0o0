@@ -57,7 +57,6 @@ end)
 
 OpenButton.MouseButton1Up:Connect(function(player)
 	MenuFrame.Visible = not MenuFrame.Visible
-	Title.Visible = not Title.Visible
 end)
 	
 	local WalkSpeedButton = Instance.new("TextButton")
