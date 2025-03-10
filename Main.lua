@@ -54,17 +54,6 @@ end)
 	MenuFrame.BackgroundTransparency = 0.5
 	MenuFrame.BackgroundColor3 = Color3.fromRGB(85, 255, 255)
 	MenuFrame.Visible = false
-	
-	local Title = Instance.new("TextLabel")
-	Title.Parent = screenGui
-	Title.Text = "EdenHub" Title.TextScaled = true
-	Title.TextColor3 = Color3.fromRGB(0, 0, 0)
-	Title.Size = UDim2.new(0,550,0,40)
-	Title.Position = UDim2.new(0,459,0,60)
-	Title.BackgroundTransparency = 0.5
-	Title.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
-	Title.Transparency = 0
-	Title.Visible = false
 
 OpenButton.MouseButton1Up:Connect(function(player)
 	MenuFrame.Visible = not MenuFrame.Visible
