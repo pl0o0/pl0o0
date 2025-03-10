@@ -60,7 +60,7 @@ end)
 	Title.Text = "EdenHub" Title.TextScaled = true
 	Title.TextColor3 = Color3.fromRGB(0, 0, 0)
 	Title.Size = UDim2.new(0,550,0,40)
-	Title.Position = UDim2.new(-0,459,0,50)
+	Title.Position = UDim2.new(0,459,0,60)
 	Title.BackgroundTransparency = 0.5
 	Title.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
 	Title.Transparency = 0
@@ -124,36 +124,36 @@ ResetWalkSpeedButton.MouseButton1Click:Connect(function()
 	end
 end)
 
-local JumpHeightButton = Instance.new("TextButton")
-JumpHeightButton.Parent = MenuFrame
-JumpHeightButton.Size = UDim2.new(0, 250, 0, 50)
-JumpHeightButton.Position = UDim2.new(0.0,0,0.04,0)
-JumpHeightButton.Text = "Set JumpHeight"
-JumpHeightButton.TextScaled = true
-JumpHeightButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-JumpHeightButton.TextTransparency = 0.3
-JumpHeightButton.BackgroundTransparency = 0.3
-JumpHeightButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	local JumpHeightButton = Instance.new("TextButton")
+	JumpHeightButton.Parent = MenuFrame
+	JumpHeightButton.Size = UDim2.new(0, 250, 0, 50)
+	JumpHeightButton.Position = UDim2.new(0.0,0,0.04,0)
+	JumpHeightButton.Text = "Set JumpHeight"
+	JumpHeightButton.TextScaled = true
+	JumpHeightButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+	JumpHeightButton.TextTransparency = 0.3
+	JumpHeightButton.BackgroundTransparency = 0.3
+	JumpHeightButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 
-local JumpHeightBox = Instance.new("TextBox")
-JumpHeightBox.Parent = JumpHeightButton
-JumpHeightBox.Text = "Write Number" JumpHeightBox.TextScaled = true
-JumpHeightBox.Size = UDim2.new(0,200,0,50)
-JumpHeightBox.Position = UDim2.new(1,2,0,0)
-JumpHeightBox.TextColor = BrickColor.new(Color3.fromRGB(255, 255, 255))
-JumpHeightBox.BackgroundColor3 = Color3.fromRGB(0,0, 0)
-JumpHeightBox.BackgroundTransparency = 0.3
-JumpHeightBox.TextTransparency = 0.3
+	local JumpHeightBox = Instance.new("TextBox")
+	JumpHeightBox.Parent = JumpHeightButton
+	JumpHeightBox.Text = "Write Number" JumpHeightBox.TextScaled = true
+	JumpHeightBox.Size = UDim2.new(0,200,0,50)
+	JumpHeightBox.Position = UDim2.new(1,2,0,0)
+	JumpHeightBox.TextColor = BrickColor.new(Color3.fromRGB(255, 255, 255))
+	JumpHeightBox.BackgroundColor3 = Color3.fromRGB(0,0, 0)
+	JumpHeightBox.BackgroundTransparency = 0.3
+	JumpHeightBox.TextTransparency = 0.3
 
-local ResetJumpHeight = Instance.new("TextButton")
-ResetJumpHeight.Parent = MenuFrame
-ResetJumpHeight.Text = "Reset" WalkSpeedTextBox.TextScaled = true
-ResetJumpHeight.Size = UDim2.new(0,50,0,50)
-ResetJumpHeight.Position = UDim2.new(0.830,0,0.040,0)
-ResetJumpHeight.TextColor = BrickColor.new(Color3.fromRGB(255, 255, 255))
-ResetJumpHeight.BackgroundColor3 = Color3.fromRGB(0,0, 0)
-ResetJumpHeight.BackgroundTransparency = 0.3
-ResetJumpHeight.TextTransparency = 0.3
+	local ResetJumpHeight = Instance.new("TextButton")
+	ResetJumpHeight.Parent = MenuFrame
+	ResetJumpHeight.Text = "Reset" WalkSpeedTextBox.TextScaled = true
+	ResetJumpHeight.Size = UDim2.new(0,50,0,50)
+	ResetJumpHeight.Position = UDim2.new(0.830,0,0.040,0)
+	ResetJumpHeight.TextColor = BrickColor.new(Color3.fromRGB(255, 255, 255))
+	ResetJumpHeight.BackgroundColor3 = Color3.fromRGB(0,0, 0)
+	ResetJumpHeight.BackgroundTransparency = 0.3
+	ResetJumpHeight.TextTransparency = 0.3
 
 
 JumpHeightButton.MouseButton1Click:Connect(function()
